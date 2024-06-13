@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes; //línea necesaria
 
+use App\Http\Traits\Uuids;
+
 class tbl_archivo extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, Uuids, SoftDeletes;
 
     protected $fillable = [
         'nombre',

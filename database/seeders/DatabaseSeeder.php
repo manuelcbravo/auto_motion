@@ -20,5 +20,8 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(UsersTableSeeder::class);
+        $this->call(CatEstatusEvaluacionesTableSeeder::class);
+        $this->call(CatTipoEvaluacionesTableSeeder::class);
+        $this->call(CatRolesTableSeeder::class);
     }
 }

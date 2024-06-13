@@ -31,8 +31,81 @@ export default function SidebarMenu({menu, rol, number_tasks_unassigned, number_
                     </li>
 
                     <li className="sidebar-item">
+                        <Link className="sidebar-link" href={route('clientes.index')} aria-expanded="false">
+                            <span>
+                                <i className="ti ti-users"></i>
+                            </span>
+                            <span className="hide-menu">Clientes</span>
+                        </Link>
+                    </li>
+
+                    <li className="sidebar-item">
                         <Link
                             className={'sidebar-link has-arrow'} aria-expanded="false">
+                                <span className="d-flex">
+                                    <i className="ti ti-clipboard-text"></i>
+                                </span>
+                            <span className="hide-menu">Solicitudes</span>
+                        </Link>
+                        <ul aria-expanded="false" className={'collapse first-level'}>
+                            <li className="sidebar-item">
+                                <Link href={route('evaluaciones.create')} className={'sidebar-link'}>
+                                    <div className="round-16 d-flex align-items-center justify-content-center">
+                                        <i className="ti ti-circle"></i>
+                                    </div>
+                                    <span className="hide-menu">Nueva</span>
+                                </Link>
+                            </li>
+                            <li className="sidebar-item">
+                                <Link href={route('evaluaciones.index')} className={'sidebar-link'}>
+                                    <div className="round-16 d-flex align-items-center justify-content-center">
+                                        <i className="ti ti-circle"></i>
+                                    </div>
+                                    <span className="hide-menu">Lista</span>
+                                </Link>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li className="sidebar-item">
+                        <Link
+                            className={'sidebar-link has-arrow'} aria-expanded="false">
+                                <span className="d-flex">
+                                    <i className="ti ti-car"></i>
+                                </span>
+                            <span className="hide-menu">Vehículos</span>
+                        </Link>
+                        <ul aria-expanded="false" className={'collapse first-level'}>
+                            <li className="sidebar-item">
+                                <Link href={route('marcas.index')} className={'sidebar-link'}>
+                                    <div className="round-16 d-flex align-items-center justify-content-center">
+                                        <i className="ti ti-circle"></i>
+                                    </div>
+                                    <span className="hide-menu">Marcas</span>
+                                </Link>
+                            </li>
+                            <li className="sidebar-item">
+                                <Link href={route('modelos.index')} className={'sidebar-link'}>
+                                    <div className="round-16 d-flex align-items-center justify-content-center">
+                                        <i className="ti ti-circle"></i>
+                                    </div>
+                                    <span className="hide-menu">Modelos</span>
+                                </Link>
+                            </li>
+                            <li className="sidebar-item">
+                                <Link href={route('versiones.index')} className={'sidebar-link'}>
+                                    <div className="round-16 d-flex align-items-center justify-content-center">
+                                        <i className="ti ti-circle"></i>
+                                    </div>
+                                    <span className="hide-menu">Versiones</span>
+                                </Link>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li className="sidebar-item">
+                        <Link
+                            className={(currentRoute === 'empresas.index') ? 'sidebar-link has-arrow  active' : 'sidebar-link has-arrow'} aria-expanded="false">
                                 <span className="d-flex">
                                     <i className="ti ti-settings"></i>
                                 </span>
@@ -48,7 +121,7 @@ export default function SidebarMenu({menu, rol, number_tasks_unassigned, number_
                                 </a>
                             </li>
                             <li className="sidebar-item">
-                                <Link href={'#'}
+                                <Link href={route('usuarios.index')}
                                       className={'sidebar-link'}>
                                     <div className="round-16 d-flex align-items-center justify-content-center">
                                         <i className="ti ti-circle"></i>
@@ -56,15 +129,15 @@ export default function SidebarMenu({menu, rol, number_tasks_unassigned, number_
                                     <span className="hide-menu">Usuarios</span>
                                 </Link>
                             </li>
-                            {/* <li className="sidebar-item">
-                                <Link href={route('company.show')}
+                            <li className="sidebar-item">
+                                <Link href={route('empresas.index')}
                                       className={'sidebar-link'}>
                                     <div className="round-16 d-flex align-items-center justify-content-center">
                                         <i className="ti ti-circle"></i>
                                     </div>
-                                    <span className="hide-menu">Compañias</span>
+                                    <span className="hide-menu">Empresas</span>
                                 </Link>
-                            </li> */}
+                            </li>
                         </ul>
                     </li>
 

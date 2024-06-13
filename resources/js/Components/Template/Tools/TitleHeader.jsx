@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {Link} from "@inertiajs/react";
 
-export default function TitleHeader({Title, Route, RouteNew, RouteSpreadSheet}) {
+export default function TitleHeader({Title, Route, RouteNew, RouteSpreadSheet, RouteNewId}) {
 
     return (
         <div className="card bg-light-info shadow-none position-relative overflow-hidden">
@@ -23,6 +23,12 @@ export default function TitleHeader({Title, Route, RouteNew, RouteSpreadSheet}) 
                         </nav>
                     </div>
                     <div className="col-4 text-end d-flex justify-content-end mt-3 mt-md-0">
+                        { (RouteNewId) ?
+                            <Link href={RouteNewId} className="ms-2 btn btn-primary d-flex align-items-center">
+                                <i className="ti ti-plus text-white me-1 fs-5"></i> Nuevo
+                            </Link>
+                        : null }
+                        
                         { (RouteNew) ?
                             <Link href={route(RouteNew)} className="ms-2 btn btn-primary d-flex align-items-center">
                                 <i className="ti ti-plus text-white me-1 fs-5"></i> Nuevo

@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+//CONTROLLER
+use App\Http\Controllers\Api\AuthController as AuthController;
+use App\Http\Controllers\Api\TblEvaluacione as Evaluaciones;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,4 +20,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::post('/auth/register', [AuthController::class,'createUser']);
+Route::post('/auth/login', [AuthController::class,'loginUser']);
+Route::post('/auth/logout', [AuthController::class,'logout'])->middleware('auth:sanctum');
+
+Route::middleware('auth:sanctum')->group(function () {
+
+    Route::post('/evaluaciones', [Evaluaciones::class,'createUser'])->name('evaluaciones.list');
+
 });

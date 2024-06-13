@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
         \DB::table('users')->insert(array (
             0 =>
                 array (
-                    'id' => 1,
+                    'id' => '00000000-0000-0000-0000-000000000000',
                     'apellidos' => 'auto_motion',
                     'email' => 'admin@fielgroup.com.mx',
                     'email_verified_at' => NULL,
@@ -32,7 +32,7 @@ class UsersTableSeeder extends Seeder
                     'nombres' => 'Admin',
                     'tipo_consultor' => 0,
                     'telefono' => '771',
-                    'nivel_acceso' => 0,
+                    'id_rol' => 0,
                 ),
         ));
     }

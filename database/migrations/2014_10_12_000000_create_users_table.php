@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('nombres');
             $table->string('apellidos');
             $table->string('email')->unique();
@@ -20,9 +20,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('password_plain')->nullable();
-            $table->integer('nivel_acceso')->default(0);
-            $table->string('tipo_consultor')->nullable();
-            $table->integer('status')->default(0);
+            $table->integer('id_rol')->default(0);
+            $table->string('tipo_consultor')->default(0);
+            $table->integer('status')->default(1)->comment('1 activado, 2 desactivado');
             $table->string('api_token', 80)->after('password')->unique()->nullable()->default(null);
             $table->rememberToken();
             $table->softDeletes();
